@@ -45,16 +45,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'spam_detection_project.wsgi.application'
 
-# Database (no se usa en este proyecto)
 DATABASES = {}
 
-# CORS Settings - Configurar según el dominio del frontend
-CORS_ALLOWED_ORIGINS = os.environ.get(
-    'CORS_ALLOWED_ORIGINS',
-    'http://localhost:3000,https://your-frontend-domain.vercel.app'
-).split(',')
+CORS_ALLOWED_ORIGINS = [
+    "https://spam-detector-frontend-fowh.vercel.app", 
+    "http://localhost:3000",
+]
 
-CORS_ALLOW_ALL_ORIGINS = os.environ.get('CORS_ALLOW_ALL_ORIGINS', 'False') == 'True'
+CORS_ALLOW_ALL_ORIGINS = False
 
 CORS_ALLOW_METHODS = [
     'GET',
